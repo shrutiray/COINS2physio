@@ -137,13 +137,13 @@ for sub in range(1,len(runsheet)):
             json_file["rest1"]=unicode(input_dir+"sub-"+runsheet["Scan_scanID"][sub]+"/originals/01+physio/sub-"+runsheet["Scan_scanID"][sub]+"_"+subdata[1][j].lower()+".acq")
 
     for j in range(len(subdata[1])):
-        if json_file["face1"]==unicode("face1_path"):
+        if "face1" in json_file:
             json_file["face1"]=unicode("")
-        elif json_file["face2"]==unicode("face2_path"):
+        elif "face2" in json_file:
             json_file["face2"]=unicode("")
-        elif json_file["rest1"]==unicode("rest1_path"):
+        elif "rest1" in json_file:
             json_file["rest1"]=unicode("")
-        elif json_file["rest2"]==unicode("rest2_path"):
+        elif "rest2" in json_file:
             json_file["rest2"]=unicode("")
 
     with open(input_dir+"physio_templates/sub-"+runsheet["Scan_scanID"][sub]+"_physio-template.json","w") as fp:
